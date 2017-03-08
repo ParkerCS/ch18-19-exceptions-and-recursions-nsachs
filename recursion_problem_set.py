@@ -30,6 +30,8 @@ personal_investment2(5000, 36, 0)
 
 
 #3.  You have $10000 on a high interest credit card with an APR of 20.0% (calculated MONTHLY).  If you make the minimum payment of $100 per month, how many months will it take to pay it off?  Solve recursively.
+#I'm not sure it is possible to pay off all 10,000 dollars.
+
 '''
 def personal_investment3(money, month, index, payed):
     money += money * (0.2/12)
