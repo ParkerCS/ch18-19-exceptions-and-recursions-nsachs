@@ -32,24 +32,38 @@ personal_investment2(5000, 36, 0)
 #3.  You have $10000 on a high interest credit card with an APR of 20.0% (calculated MONTHLY).  If you make the minimum payment of $100 per month, how many months will it take to pay it off?  Solve recursively.
 #I'm not sure it is possible to pay off all 10,000 dollars.
 
+def personal_investment3(money, month, done):
+    monthly_apr = 0.20 / 12
+    money += money * monthly_apr
+    money -= 100
+    #print(money)
+    if month < 100 and not done:
+        personal_investment(money, month +1, False)
+    if money < 0:
+        done = True
+        print("Your debt was paid off after" , month, "months")
+
+personal_investment3(10000, 1, False)
+print("You'll never pay your debt off.")
+
 '''
 def personal_investment3(money, month, index, payed):
-    money += money * (0.2/12)
     money -= 100
+    money += money * (0.2/12)
     index += 1
     if money <= 0:
         payed = True
-        print("You payed it off in", month, "months")
+        pri nt("You payed it off in", month, "months")
 
 
-personal_investment3(10000, months, 0, False)
+personal_investment3(10000, month, 0, False)
+
 '''
-
 #4  Pyramid of Cubes - (10pts) If you stack boxes in a pyramid, the top row would have 1 box, the second row would have two, the third row would have 3 and so on.  Make a recursive function which calculates the TOTAL NUMBER OF BOXES for a pyramid of boxes n high.  For instance, a pyramid that is 3 high would have a total of 6 boxes.  A pyramid 4 high would have 10.
-'''
-def pyramid(height, boxes, row):
-    if row == 0:
-        #boxes = 0
+
+def pyramid(height, boxes, index):
+    if index == 0:
+        boxes = 0
     boxes += height
     if height != 0:
         pyramid(height-1, boxes, index + 1)
@@ -57,4 +71,3 @@ def pyramid(height, boxes, row):
         print("There are", boxes, "boxes")
 
 pyramid(int(input("Enter a positive, whole value: ")), 0, 0)
-'''
