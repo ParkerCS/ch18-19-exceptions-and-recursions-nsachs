@@ -44,21 +44,8 @@ def personal_investment3(money, month, done):
         print("Your debt was paid off after" , month, "months")
 
 personal_investment3(10000, 1, False)
-print("You'll never pay your debt off.")
+print("You'll never pay off your debt.")
 
-'''
-def personal_investment3(money, month, index, payed):
-    money -= 100
-    money += money * (0.2/12)
-    index += 1
-    if money <= 0:
-        payed = True
-        pri nt("You payed it off in", month, "months")
-
-
-personal_investment3(10000, month, 0, False)
-
-'''
 #4  Pyramid of Cubes - (10pts) If you stack boxes in a pyramid, the top row would have 1 box, the second row would have two, the third row would have 3 and so on.  Make a recursive function which calculates the TOTAL NUMBER OF BOXES for a pyramid of boxes n high.  For instance, a pyramid that is 3 high would have a total of 6 boxes.  A pyramid 4 high would have 10.
 
 def pyramid(height, boxes, index):
