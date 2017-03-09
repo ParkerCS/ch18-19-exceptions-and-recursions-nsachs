@@ -14,9 +14,9 @@ import turtle
 
 my_turtle = turtle.Turtle()
 my_screen = turtle.Screen()
-my_screen.bgcolor('cyan')
+my_screen.bgcolor('lightblue')
 
-color_list = ["red", "green", "orange", "yellow", "blue", "purple", "magenta", "cyan", "black"]
+color_list = ["red", "orange", "yellow", "green","blue", "purple", "magenta", "cyan", "black"]
 
 def draw(my_turtle, x, y, heading, dist, depth):
     my_turtle.up()
@@ -27,24 +27,17 @@ def draw(my_turtle, x, y, heading, dist, depth):
     my_turtle.forward(dist)
     new_y = my_turtle.ycor()
     new_x = my_turtle.xcor()
-    #my_turtle.goto(new_x, new_y)
+
     if depth > 0:
-        draw(my_turtle, new_x, new_y, heading + 45, dist/ 1.5, depth - 1)
-        draw(my_turtle, new_x, new_y, heading - 25, dist/ 1.5, depth - 1)
-    heading = 0
-    curl = 0.1
-    for i in range(50):  # (0, 360, 55):
-        my_turtle.setheading(heading)
-        curl += 2
-        heading += curl
-        my_turtle.forward(5)
+        draw(my_turtle, new_x, new_y, heading + 45, dist/1.5, depth - 1)
+        draw(my_turtle, new_x, new_y, heading - 45, dist/1.5, depth - 1)
 
 
 my_turtle.speed(0)
 my_turtle.width(2)
 
-for i in range(90, 180):
-    draw(my_turtle, 0, -150, i, 150, 5)
+for i in range(0, 360, 90):
+    draw(my_turtle, 0, 0, i, 100, 6)
 
 
 my_screen.exitonclick()
